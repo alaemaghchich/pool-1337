@@ -7,12 +7,17 @@ char *ft_strncpy(char *dest, char *src, unsigned int n){
         dest[i] = src[i];
         i++;
     }
-    dest[i] = '\0';
+    while(i<n){
+        dest[i] = '\0';
+        i++;
+    }
     return dest;
 }
 int main(){
     char src[] = "salam 3alykom";
     char dest[20];
-    int n = 10;
+    int n = 20;
     ft_strncpy(dest, src, n);
+    printf("%s", dest);
+
 }
