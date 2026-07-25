@@ -8,7 +8,7 @@ while(str[i]){
     }
     i++;
 }
-return 1;;
+return 1;
 }
 int main(){
     char str[]="HelloWorld";
