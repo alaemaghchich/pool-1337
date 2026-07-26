@@ -11,6 +11,6 @@ int ft_str_is_printable(char *str){
     return 1;
 }
 int main(){
-    ft_str_is_printable("!@#$%^&*());"); // return 1
+    ft_str_is_printable("!@#$%^&*());");
     ft_str_is_printable("‰ƒ†©");
 }
