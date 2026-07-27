@@ -16,7 +16,7 @@ char *ft_strncpy(char *dest, char *src, unsigned int n){
 int main(){
     char src[] = "salam 3alykom";
     char dest[20];
-    int n = 20;
+    int n = 10;
     ft_strncpy(dest, src, n);
     printf("%s", dest);
 
