@@ -6,10 +6,9 @@ if (to_find[0] == '\0'){
     return str;
 }
 
-int j;
 int i = 0;
 while(str[i]){
-    j = 0;
+    int j = 0;
     while(str[j+i] && str[j+i] == to_find[j]){
         j++;
     }

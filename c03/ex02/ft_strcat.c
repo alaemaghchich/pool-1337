@@ -1,17 +1,17 @@
 #include<unistd.h>
 
 char *ft_strcat(char *dest, char *src){
-    char *start = dest;
-while(*dest){
-    dest++;
+int i = 0;
+while(dest[i]){
+    i++;
 }
-while(*src){
-    *dest = *src;
-    dest++;
-    src++;
+int j = 0;
+while(src[j]){
+    dest[i] = src[j];
+    i++;
+    j++;
 }
-*dest = '\0';
-return start;
+return dest;
 }
 int main(){
     char dest[20] =  "hello";
