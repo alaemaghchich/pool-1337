@@ -1,4 +1,5 @@
 #include <unistd.h>
+#include <stdio.h>
 
 void    ft_putchar(char c){
     write(1,&c,1);
@@ -12,7 +13,7 @@ int ft_strlen(char *str){
     return len;
 }
 
-int    check_double(char *base){
+int    check_double(char *base){ 
     int i = 0;
     int j;
     while(base[i]){
@@ -25,15 +26,19 @@ int    check_double(char *base){
         }
         i++;
     }
+    return 0;
 } 
 
 int     validation_base(char *base){
     int base_len = ft_strlen(base);
     int i = 0;
-    while(check_double(base) == 1 || base[0] == '\0' || base_len <= 1 || base[i] == '+' || base[i] == '-'){
-        return 1;
+    while(base[i]){
+        if(check_double(base) == 1 || base[0] == '\0' || base_len <= 1 || base[i] == '+' || base[i] == '-'){
+            return 1;
+        }
+        i++;
     }
-    i++;
+    
 }
 
 void    ft_putnbr_base(int nbr, char *base){
@@ -53,9 +58,9 @@ void    ft_putnbr_base(int nbr, char *base){
         ft_putnbr_base(nbr / base_len ,base);
     }
     ft_putchar(base[nbr % base_len]);
-     
+
 }
 
 int main(){
-    ft_putnbr_base(1337, "0123456789abcdef");
+    ft_putnbr_base(1337, "01");
 }
