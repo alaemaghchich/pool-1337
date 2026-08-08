@@ -1,6 +1,3 @@
-#include<stdio.h>
-
- 
 void piramid(int n){
     if(n<0){
         return;
