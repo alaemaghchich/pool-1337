@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include<unistd.h>
-
 int main() {
     int arr[] = {9, 3, 1, 6, 8, 0, 2, 5, 4, 7};
     int len = sizeof(arr) / sizeof(arr[0]);
