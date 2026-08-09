@@ -16,7 +16,8 @@ while(*str == '-' || *str == '+'){
 }
 
 while(*str >= '0' && *str <= '9'){
-	result = result * 10 + (*str - 48);
+	result = result * 10;
+	result +=   (*str - 48);
 	str++;
 }
 return result * sign;
