@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi_base.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghchi <amaghchi@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/09/02 19:24:30 by amaghchi          #+#    #+#             */
+/*   Updated: 2026/09/02 20:35:19 by amaghchi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include<unistd.h>
-#include<stdio.h>
 
 void    ft_putchar(char c)
 {
@@ -103,9 +114,4 @@ int     ft_atoi_base(char *str, char *base)
         str++;
     }
     return sign * result;
-
-}
-
-int main (){
-    printf("%d", ft_atoi_base("10100111001", "01"));
 }

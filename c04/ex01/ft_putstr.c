@@ -1,12 +1,22 @@
-#include<unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghchi <amaghchi@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/23 09:58:35 by amaghchi          #+#    #+#             */
+/*   Updated: 2026/08/23 10:45:25 by amaghchi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void ft_putstr(char *str){
-    while(*str){
-        write(1,str,1);
-        str++;
-    }
-    return str;
-}
-int main(){
-    ft_putstr("hello world");
+#include <unistd.h>
+
+void	ft_putstr(char *str)
+{
+	while (*str)
+	{
+		write(1, str, 1);
+		str++;
+	}
 }

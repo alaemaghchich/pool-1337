@@ -1,66 +1,94 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghchi <amaghchi@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/09/02 19:24:30 by amaghchi          #+#    #+#             */
+/*   Updated: 2026/09/02 20:35:19 by amaghchi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
-#include <stdio.h>
 
-void    ft_putchar(char c){
-    write(1,&c,1);
+int	base_len(char *base)
+{
+	int	i;
+
+	i = 0;
+	while (base[i])
+	{
+		i++;
+	}
+	return (i);
 }
 
-int ft_strlen(char *str){
-    int len = 0;
-    while(str[len]){
-        len++;
-    }
-    return len;
+int	wax_twice(char *base)
+{
+	int	len;
+	int	j;
+	int	i;
+
+	len = base_len(base);
+	i = 0;
+	while (i < len)
+	{
+		j = i + 1;
+		while (base[j])
+		{
+			if (base[j] == base[i])
+			{
+				return (0);
+			}
+			j++;
+		}
+		i++;
+	}
+	return (1);
 }
 
-int    check_double(char *base){ 
-    int i = 0;
-    int j;
-    while(base[i]){
-        j = i + 1;
-        while(base[j]){
-            if(base[i] == base[j]){
-                return 1;
-            }
-            j++;
-        }
-        i++;
-    }
-    return 0;
-} 
+int	wax_valid(char *base)
+{
+	int	i;
+	int	len;
 
-int     validation_base(char *base){
-    int base_len = ft_strlen(base);
-    int i = 0;
-    while(base[i]){
-        if(check_double(base) == 1 || base[0] == '\0' || base_len <= 1 || base[i] == '+' || base[i] == '-'){
-            return 1;
-        }
-        i++;
-    }
-    
+	len = base_len(base);
+	if (len < 2 || (wax_twice(base) == 0))
+	{
+		return (0);
+	}
+	i = 0;
+	while (base[i])
+	{
+		if (base[i] == '-' || base[i] == '+')
+		{
+			return (0);
+		}
+		i++;
+	}
+	return (1);
 }
 
-void    ft_putnbr_base(int nbr, char *base){
-    if(validation_base(base) == 1){
-        return;
-    }
-    int base_len = ft_strlen(base);
-     if(nbr ==  -2147483648){
-        write(1,"-2147483648" , 11);
-     }
-    
-     if(nbr < 0){
-        ft_putchar('-');
-        nbr *= -1;
-    }
-    if(nbr >= base_len){
-        ft_putnbr_base(nbr / base_len ,base);
-    }
-    ft_putchar(base[nbr % base_len]);
+void	ft_putnbr_base(int nbr, char *base)
+{
+	int		len;
+	long	nb;
 
-}
-
-int main(){
-    ft_putnbr_base(1337, "01");
+	len = base_len(base);
+	nb = nbr;
+	if (wax_valid(base) == 0)
+	{
+		return ;
+	}
+	if (nb < 0)
+	{
+		nb *= -1;
+		write(1, "-", 1);
+	}
+	if (nb >= len)
+	{
+		ft_putnbr_base(nb / len, base);
+	}
+	write(1, &base[nb % len], 1);
 }

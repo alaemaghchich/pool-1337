@@ -1,11 +1,23 @@
-#include<unistd.h>
-int ft_strlen(char *str){
-    int i = 0;
-    while(str[i]){
-        i++;
-    }
-    return i;
-}
-int main(){
-    printf("%i" , ft_strlen("hello world"));
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghchi <amaghchi@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/23 09:54:04 by amaghchi          #+#    #+#             */
+/*   Updated: 2026/08/23 10:44:10 by amaghchi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		i++;
+	}
+	return (i);
 }
