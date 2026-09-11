@@ -1,20 +1,32 @@
-#include<unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghchi <amaghchi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/18 14:28:07 by amaghchi          #+#    #+#             */
+/*   Updated: 2026/08/19 14:09:20 by amaghchi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char *ft_strcat(char *dest, char *src){
-int i = 0;
-while(dest[i]){
-    i++;
-}
-int j = 0;
-while(src[j]){
-    dest[i] = src[j];
-    i++;
-    j++;
-}
-return dest;
-}
-int main(){
-    char dest[20] =  "hello";
-    char src[] = "world";
-    ft_strcat(dest, src);
+char	*ft_strcat(char *dest, char *src)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (dest[i])
+	{
+		i++;
+	}
+	j = 0;
+	while (src[j])
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }

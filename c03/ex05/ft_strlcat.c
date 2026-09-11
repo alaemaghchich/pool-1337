@@ -1,35 +1,53 @@
-#include<unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghchi <amaghchi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/18 21:15:34 by amaghchi          #+#    #+#             */
+/*   Updated: 2026/08/19 21:20:47 by amaghchi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_strlen(char *str){
-    int i = 0;
-    while(str[i]){
-        i++;
-    }
-    return i;
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		i++;
+	}
+	return (i);
 }
 
-unsigned int ft_strlcat(char *dest, char *src, unsigned int size){
-     unsigned int dlen = ft_strlen(dest);
-     unsigned int slen = ft_strlen(src);
-     unsigned int i = 0;
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+{
+	unsigned int	dlen;
+	unsigned int	slen;
+	unsigned int	i;
 
-     if(size <= dlen){
-         return size + slen;
-     }
-
-     while(src[i] && dlen + i < size - 1){
-        dest[dlen + i] = src[i];
-        i++;
-     }
-     dest[dlen + i] = '\0';
-     return dlen + slen;
+	dlen = ft_strlen(dest);
+	slen = ft_strlen(src);
+	i = 0;
+	if (size <= dlen)
+	{
+		return (size + slen);
+	}
+	while (src[i] && dlen + i < size - 1)
+	{
+		dest[dlen + i] = src[i];
+		i++;
+	}
+	dest[dlen + i] = '\0';
+	return (slen + dlen);
 }
-
-int main(){
-    char dest[20] = "hello ";
-    char src[] = "world";
-    char size = 10;
-    int *p = ft_strlcat(dest, src, size);
-    printf("%s" , dest);
-    printf("%i" , p);
+#include <stdio.h>
+int main()
+{
+	char dest[15] = "hello";
+	char src[] = "world";
+printf("%d\n", ft_strlcat(dest, src, 2));
+printf("%s\n", dest);
 }

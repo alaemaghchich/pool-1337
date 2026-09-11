@@ -1,17 +1,27 @@
-#include<unistd.h>
-int ft_strncmp(char *s1, char *s2, unsigned int n){
-    int i = 0;
-    while(s1[i] && s2[i] && s1[i] == s2[i] && i < n - 1){
-        i++;
-    }
-    return s1[i] - s2[i];
-}
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghchi <amaghchi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/18 13:40:48 by amaghchi          #+#    #+#             */
+/*   Updated: 2026/08/19 11:15:23 by amaghchi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
+{
+	unsigned int	i;
 
-int main(){
-    if(ft_strncmp("hel9o", "hell4", 4) == 0){
-        write(1,"0\n",2);
-    }else{
-        write(1,"1\n",2);
-    }
+	i = 0;
+	while (s1[i] && s2[i] && s1[i] == s2[i] && i < n)
+	{
+		i++;
+	}
+	if (i == n)
+	{
+		return (0);
+	}
+	return (s1[i] - s2[i]);
 }
