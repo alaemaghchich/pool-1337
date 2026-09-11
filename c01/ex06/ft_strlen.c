@@ -1,13 +1,23 @@
-#include<unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghchi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/14 11:35:06 by amaghchi          #+#    #+#             */
+/*   Updated: 2026/08/14 11:49:58 by amaghchi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_strlen(char *str){
-    int i = 0;
-    while(str[i] != '\0'){
-        i++;
-    }
-    return i;
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		i++;
+	}
+	return (i);
 }
-/*int main(){
-    char str[] = "hello world";
-    printf("%i\n", ft_strlen(str));
-}*/

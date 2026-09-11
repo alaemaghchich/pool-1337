@@ -1,13 +1,20 @@
-#include<unistd.h>
-void ft_swap(int *a, int *b){
-    int temp = *a;
-    *a = *b;
-    *b = temp;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghchi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/14 09:11:38 by amaghchi          #+#    #+#             */
+/*   Updated: 2026/08/14 09:27:49 by amaghchi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+void	ft_swap(int *a, int *b)
+{
+	int	swap;
+
+	swap = *a;
+	*a = *b;
+	*b = swap;
 }
-/*
-int main(){
-    int y =  5;
-    int x = 10;
-    ft_swap(&y, &x);
-    printf("y is %i ; x is %i" , y, x);
-}*/

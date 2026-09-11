@@ -1,15 +1,20 @@
-#include<unistd.h>
-#include<stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghchi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/14 11:01:19 by amaghchi          #+#    #+#             */
+/*   Updated: 2026/08/14 11:02:49 by amaghchi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void ft_ultimate_div_mod(int *a, int *b){
-int tmp = *a;
-*a /= *b;
-*b = tmp % *b;
+void	ft_ultimate_div_mod(int *a, int *b)
+{
+	int	tmp;
+
+	tmp = *a;
+	*a /= *b;
+	*b = tmp % *b;
 }
-/*int main(){
-    int x = 10;
-    int y = 3;
-
-    ft_ultimate_div_mod(&x, &y);
-    printf("div of x is %i\n mod of y is %i" , x , y);
-}*/

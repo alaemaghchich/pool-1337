@@ -1,37 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaghchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/14 20:15:38 by amaghchi          #+#    #+#             */
-/*   Updated: 2026/08/15 11:08:44 by amaghchi         ###   ########.fr       */
+/*   Created: 2026/08/14 11:14:47 by amaghchi          #+#    #+#             */
+/*   Updated: 2026/08/15 11:03:19 by amaghchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_sort_int_tab(int *tab, int size)
-{
-	int	i;
-	int	j;
-	int	li;
-	int	swp;
+#include <unistd.h>
 
-	i = 0;
-	li = size - 1;
-	while (i < li)
+void	ft_putstr(char *str)
+{
+	while (*str)
 	{
-		j = 0;
-		while (j < li - i)
-		{
-			if (tab[j] > tab[j + 1])
-			{
-				swp = tab[j];
-				tab[j] = tab[j + 1];
-				tab[j + 1] = swp;
-			}
-			j++;
-		}
-		i++;
+		write(1, str, 1);
+		str++;
 	}
 }

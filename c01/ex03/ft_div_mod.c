@@ -1,16 +1,17 @@
-#include<unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_div_mod.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghchi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/14 09:26:10 by amaghchi          #+#    #+#             */
+/*   Updated: 2026/08/15 11:12:31 by amaghchi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void ft_div_mod(int a, int b, int *div, int *mod){
-    *div = a/b;
-    *mod = a%b;
+void	ft_div_mod(int a, int b, int *div, int *mod)
+{
+	*div = a / b;
+	*mod = a % b;
 }
-/*
-int main(){
-    int a = 10;
-    int b = 3;
-    int div, mod;
-    ft_div_mod(a,b,&div, &mod);
-    printf("div : %i\n", div);
-    printf("mod : %i", mod);
-
-}*/
