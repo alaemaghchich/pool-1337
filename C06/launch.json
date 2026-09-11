@@ -6,7 +6,8 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
-            "args": [//this if you want test your code whit vs code visualizer
+            //this if you want test your code whit vs code visualizer
+            "args": [
                 "test1",
                 "test2",
                 "test3",
