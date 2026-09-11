@@ -1,12 +1,25 @@
-#include<unistd.h>
-void ft_print_reverse_alphabet(void){
-    char c = 'z';
-    while(c>= 'a'){
-        write(1,&c,1);
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghchi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/12 14:44:59 by amaghchi          #+#    #+#             */
+/*   Updated: 2026/08/12 19:01:35 by amaghchi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-        c--;
-    }  
-}
-int main(){
-    ft_print_reverse_alphabet();
+#include <unistd.h>
+
+void	ft_print_reverse_alphabet(void)
+{
+	char	z;
+
+	z = 'z';
+	while (z >= 'a')
+	{
+		write(1, &z, 1);
+		z--;
+	}
 }

@@ -1,15 +1,25 @@
-#include<unistd.h>
-void ft_putchar(char c){
-    write(1,&c,1);
-}
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghchi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/12 15:05:34 by amaghchi          #+#    #+#             */
+/*   Updated: 2026/08/12 20:41:45 by amaghchi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void ft_print_numbers(){
-	char num = '0';
-	while(num<='9'){
-		ft_putchar(num);
-		num++;
+#include <unistd.h>
+
+void	ft_print_numbers(void)
+{
+	char	digit;
+
+	digit = '0';
+	while (digit <= '9')
+	{
+		write(1, &digit, 1);
+		digit++;
 	}
-}
-int main (){
-	ft_print_numbers();
 }

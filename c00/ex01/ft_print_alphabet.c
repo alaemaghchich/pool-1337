@@ -1,11 +1,25 @@
-#include<unistd.h>
-void ft_print_alphabet(void){
-    char c = 'a';
-    while(c <= 'z'){
-        write(1,&c,1);
-        c++;
-    }
-}
-int main(){
-    ft_print_alphabet();
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghchi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/12 14:17:01 by amaghchi          #+#    #+#             */
+/*   Updated: 2026/08/12 19:04:57 by amaghchi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+void	ft_print_alphabet(void)
+{
+	char	a;
+
+	a = 'a';
+	while (a <= 'z')
+	{
+		write(1, &a, 1);
+		a++;
+	}
 }
