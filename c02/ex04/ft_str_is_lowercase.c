@@ -1,18 +1,24 @@
-#include<unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghchi <amaghchi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/16 12:56:02 by amaghchi          #+#    #+#             */
+/*   Updated: 2026/08/17 09:57:44 by amaghchi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_str_is_lowercase(char *str){
-    int i = 0;
-    while(str[i]){
-        if(!(str[i] >= 'a' && str[i] <= 'z')){
-            return 0;
-        }
-        i++;
-    }
-    return 1;
-}
-int main(){
-ft_str_is_lowercase("helloworld");//return 1
-ft_str_is_lowercase("");//return 1
-ft_str_is_lowercase("hello WORLD");//return 0
-ft_str_is_lowercase("1337/42");//return 0
+int	ft_str_is_lowercase(char *str)
+{
+	while (*str)
+	{
+		if (*str < 'a' || *str > 'z')
+		{
+			return (0);
+		}
+		str++;
+	}
+	return (1);
 }

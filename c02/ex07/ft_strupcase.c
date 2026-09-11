@@ -1,19 +1,27 @@
-#include<unistd.h>
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghchi <amaghchi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/16 16:43:39 by amaghchi          #+#    #+#             */
+/*   Updated: 2026/08/17 09:50:38 by amaghchi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 char	*ft_strupcase(char *str)
 {
-int i = 0;
-while(str[i])
-{
-    if(str[i] >= 'a' && str[i] <= 'z'){
-        str[i] -= 32;
-    }
-    i++;
-}
-return str;
-}
-int main(){
-    char str[] = "hello 1337";
-    ft_strupcase(str);
+	char	*p;
+
+	p = str;
+	while (*p)
+	{
+		if (*p >= 'a' && *p <= 'z')
+		{
+			*p -= 32;
+		}
+		p++;
+	}
+	return (str);
 }

@@ -1,17 +1,27 @@
-#include<unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghchi <amaghchi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/16 20:26:56 by amaghchi          #+#    #+#             */
+/*   Updated: 2026/08/17 09:47:51 by amaghchi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char *ft_strlowcase(char *str){
-    int i = 0;
-    while(str[i])
-    {
-        if(str[i] >= 'A' && str[i] <= 'Z'){
-            str[i] += 32;
-        }
-        i++;
-    }
-    return str;
-}
-int main (){
-    char str[] = "HELLO  world";
-    ft_strlowcase(str);
+char	*ft_strlowcase(char *str)
+{
+	char	*p;
+
+	p = str;
+	while (*p)
+	{
+		if (*p >= 'A' && *p <= 'Z')
+		{
+			*p += 32;
+		}
+		p++;
+	}
+	return (str);
 }

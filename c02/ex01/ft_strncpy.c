@@ -1,23 +1,29 @@
-#include<unistd.h>
-#include<stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghchi <amaghchi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/16 10:19:25 by amaghchi          #+#    #+#             */
+/*   Updated: 2026/08/17 20:14:01 by amaghchi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char *ft_strncpy(char *dest, char *src, unsigned int n){
-    int i = 0;
-    while(src[i] != '\0' && i<n){
-        dest[i] = src[i];
-        i++;
-    }
-    while(i<n){
-        dest[i] = '\0';
-        i++;
-    }
-    return dest;
-}
-int main(){
-    char src[] = "salam 3alykom";
-    char dest[20];
-    int n = 10;
-    ft_strncpy(dest, src, n);
-    printf("%s", dest);
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
+{
+	unsigned int	i;
 
+	i = 0;
+	while (i < n && src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (dest);
 }

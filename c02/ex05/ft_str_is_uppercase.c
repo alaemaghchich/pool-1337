@@ -1,18 +1,23 @@
-#include<unistd.h>
-
-int ft_str_is_uppercase(char *str){
-    int i = 0;
-    while(str[i]){
-        if(!(str[i] >= 'A' && str[i] <= 'Z')){
-            return 0;
-        }
-        i++;
-    }
-    return 1;
-}
-int main(){
-ft_str_is_uppercase("1337/42");//return 0
-ft_str_is_uppercase("HELLOWORLD");//return 1
-ft_str_is_uppercase("");//return 1
-ft_str_is_uppercase("HELLOworld");//return 0
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghchi <amaghchi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/16 13:47:43 by amaghchi          #+#    #+#             */
+/*   Updated: 2026/08/17 09:56:10 by amaghchi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+int	ft_str_is_uppercase(char *str)
+{
+	while (*str)
+	{
+		if (*str < 'A' || *str > 'Z')
+		{
+			return (0);
+		}
+		str++;
+	}
+	return (1);
 }

@@ -1,16 +1,28 @@
-#include<unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghchi <amaghchi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/16 11:51:45 by amaghchi          #+#    #+#             */
+/*   Updated: 2026/08/17 20:17:51 by amaghchi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	ft_str_is_alpha(char *str){
-int i = 0;
-while(str[i]){
-    if(!(str[i] >= 'a' && str[i] <= 'z' || str[i] >= 'A' && str[i] <= 'Z')){
-        return 0;
-    }
-    i++;
-}
-return 1;
-}
-int main(){
-    char str[]="HelloWorld";
-    ft_str_is_alpha(str);
+int	ft_str_is_alpha(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (!((str[i] >= 'a' && str[i] <= 'z')
+				|| (str[i] >= 'A' && str[i] <= 'Z')))
+		{
+			return (0);
+		}
+		i++;
+	}
+	return (1);
 }

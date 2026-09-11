@@ -1,16 +1,24 @@
-#include<unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghchi <amaghchi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/16 14:20:07 by amaghchi          #+#    #+#             */
+/*   Updated: 2026/08/17 09:53:27 by amaghchi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_str_is_printable(char *str){
-    int i = 0;
-    while(str[i]){
-        if(!(str[i] >= 32&& str[i] <= 126)){
-            return 0;
-        }
-        i++;
-    }
-    return 1;
-}
-int main(){
-    ft_str_is_printable("!@#$%^&*());");
-    ft_str_is_printable("‰ƒ†©");
+int	ft_str_is_printable(char *str)
+{
+	while (*str)
+	{
+		if (*str < 32 || *str > 126)
+		{
+			return (0);
+		}
+		str++;
+	}
+	return (1);
 }
